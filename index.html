@@ -10,16 +10,19 @@
     <div id="bmiCalculator">
         <h1>BMI Calculator</h1>
         <div id="inputContainer">
+            <label for="age">Age:</label>
+            <input type="number" id="age" placeholder="Enter age">
+            
             <label for="height">Height (cm):</label>
-            <input type="number" id="height" placeholder="Enter your height">
+            <input type="number" id="height" placeholder="Enter height">
             
             <label for="weight">Weight (kg):</label>
-            <input type="number" id="weight" placeholder="Enter your weight">
+            <input type="number" id="weight" placeholder="Enter weight">
             
             <button onclick="calculateBMI()">Calculate BMI</button>
         </div>
         <div id="resultContainer">
-            <h2>Your BMI is:</h2>
+            <h2>Your BMI:</h2>
             <p id="bmiResult"></p>
         </div>
     </div>

@@ -1,30 +1,36 @@
 document.addEventListener('DOMContentLoaded', function () {
+    const ageInput = document.getElementById('age');
     const heightInput = document.getElementById('height');
+    const weightInput = document.getElementById('weight');
 
-    // Set focus on the height input when the page loads
-    heightInput.focus();
+    // Set focus on the age input when the page loads
+    ageInput.focus();
 
-    const display = document.getElementById('display');
-    const buttons = document.getElementById('buttons');
+    const resultContainer = document.getElementById('resultContainer');
+    const bmiResult = document.getElementById('bmiResult');
 
-    buttons.addEventListener('click', function (event) {
-        if (event.target.tagName === 'BUTTON') {
-            const buttonValue = event.target.textContent;
-            handleButtonClick(buttonValue);
+    function calculateBMI() {
+        const age = parseFloat(ageInput.value);
+        const height = parseFloat(heightInput.value);
+        const weight = parseFloat(weightInput.value);
+
+        if (isNaN(age) || isNaN(height) || isNaN(weight) || age <= 0 || height <= 0 || weight <= 0) {
+            alert('Please enter valid age, height, and weight values.');
+            return;
         }
-    });
 
-    function handleButtonClick(value) {
-        if (value === '=') {
-            try {
-                display.textContent = eval(display.textContent);
-            } catch (error) {
-                display.textContent = 'Error';
-            }
-        } else if (value === 'C') {
-            display.textContent = '';
-        } else {
-            display.textContent += value;
-        }
+        const bmi = calculateBMIValue(age, height, weight);
+        displayResult(bmi);
+    }
+
+    function calculateBMIValue(age, height, weight) {
+        // BMI formula: weight (kg) / (height (m) * height (m))
+        const heightInMeters = height / 100;
+        return (weight / (heightInMeters * heightInMeters)).toFixed(2);
+    }
+
+    function displayResult(bmi) {
+        bmiResult.textContent = `Your BMI is: ${bmi}`;
+        resultContainer.style.display = 'block';
     }
 });
