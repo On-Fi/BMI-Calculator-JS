@@ -1,31 +1,30 @@
-function calculateBMI() {
+document.addEventListener('DOMContentLoaded', function () {
     const heightInput = document.getElementById('height');
-    const weightInput = document.getElementById('weight');
-    const resultContainer = document.getElementById('resultContainer');
-    const bmiResult = document.getElementById('bmiResult');
 
-    const height = parseFloat(heightInput.value);
-    const weight = parseFloat(weightInput.value);
+    // Set focus on the height input when the page loads
+    heightInput.focus();
 
-    if (isNaN(height) || isNaN(weight) || height <= 0 || weight <= 0) {
-        alert('Please enter valid height and weight values.');
-        return;
+    const display = document.getElementById('display');
+    const buttons = document.getElementById('buttons');
+
+    buttons.addEventListener('click', function (event) {
+        if (event.target.tagName === 'BUTTON') {
+            const buttonValue = event.target.textContent;
+            handleButtonClick(buttonValue);
+        }
+    });
+
+    function handleButtonClick(value) {
+        if (value === '=') {
+            try {
+                display.textContent = eval(display.textContent);
+            } catch (error) {
+                display.textContent = 'Error';
+            }
+        } else if (value === 'C') {
+            display.textContent = '';
+        } else {
+            display.textContent += value;
+        }
     }
-
-    const bmi = calculateBMIValue(height, weight);
-    displayResult(bmi);
-}
-
-function calculateBMIValue(height, weight) {
-    // BMI formula: weight (kg) / (height (m) * height (m))
-    const heightInMeters = height / 100;
-    return (weight / (heightInMeters * heightInMeters)).toFixed(2);
-}
-
-function displayResult(bmi) {
-    const resultContainer = document.getElementById('resultContainer');
-    const bmiResult = document.getElementById('bmiResult');
-
-    bmiResult.textContent = `Your BMI is: ${bmi}`;
-    resultContainer.style.display = 'block';
-}
+});
