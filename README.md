@@ -4,4 +4,4 @@
 ### ⚠️ DISCLAIMER ⚠️ <br> **This formula is not 100% accurate! <br> (Because variables like: sex, body fat %, health issues, disabilities and other lifestyle indicators are not taken into account)**
 ### BMI Ranges used in the Result output of this app:
 ![BMI-ranges](/BMI-results.png)
-### Checkout the ([Image Source](https://theconversation.com/body-mass-index-may-not-be-the-best-indicator-of-our-health-how-can-we-improve-it-143155)) it is a well written article about criticism's of the BMI.
+### Checkout the [Image Source](https://theconversation.com/body-mass-index-may-not-be-the-best-indicator-of-our-health-how-can-we-improve-it-143155) it is a well written article about criticism's of the BMI.
