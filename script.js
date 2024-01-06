@@ -56,4 +56,20 @@ document.addEventListener('DOMContentLoaded', function () {
         bmiResult.textContent += ` ${resultText}`;
         resultContainer.style.display = 'block';
     }
+
+    // Blue transition backgroundcolor
+    let time = 0;
+
+    function toggleBackgroundColor() {
+        const body = document.body;
+        body.style.transition = 'background-color 1s linear';
+    
+        const hue = Math.sin(time) * 20 + 200;
+    
+        body.style.backgroundColor = `hsl(${hue}, 100%, 50%)`;
+    
+        time += 0.02;
+    }
+    
+    setInterval(toggleBackgroundColor, 20);
 });
