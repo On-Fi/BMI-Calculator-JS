@@ -2,12 +2,17 @@ document.addEventListener('DOMContentLoaded', function () {
     const ageInput = document.getElementById('age');
     const heightInput = document.getElementById('height');
     const weightInput = document.getElementById('weight');
+    const calculateBtn = document.getElementById('calculateBtn');
 
     // Set focus on the age input when the page loads
     ageInput.focus();
 
     const resultContainer = document.getElementById('resultContainer');
     const bmiResult = document.getElementById('bmiResult');
+
+    calculateBtn.addEventListener('click', function () {
+        calculateBMI();
+    });
 
     function calculateBMI() {
         const age = parseFloat(ageInput.value);
