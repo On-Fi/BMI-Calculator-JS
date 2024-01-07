@@ -20,8 +20,8 @@ document.addEventListener('DOMContentLoaded', function () {
         const weight = parseFloat(weightInput.value);
     
         // Check if inputs are within valid ranges
-        if (isNaN(age) || age < 16 || age > 99 || isNaN(height) || height < 100 || height > 220 || isNaN(weight) || weight < 50 || weight > 300) {
-            alert('Please enter valid age (16-99), height (100cm-220cm), and weight (50cm-300kg) values.');
+        if (isNaN(age) || age < 18 || age > 99 || isNaN(height) || height < 150 || height > 220 || isNaN(weight) || weight < 50 || weight > 300) {
+            alert('Please enter valid age (18-99), height (150cm-220cm), and weight (50kg-300kg) values.');
             return;
         }
     
