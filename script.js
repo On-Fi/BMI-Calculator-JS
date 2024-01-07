@@ -48,15 +48,15 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     function displayResult(bmi) {
-        bmiResult.textContent = `${bmi}`;
-    
+        bmiResult.innerHTML = `<span style="font-size: 1.5em; color: #333; font-weight: bold;">${bmi} </span>`;;
+        
         let resultText = '';
         if (bmi < 18.5) {
             resultText = 'Underweight (It would be good if you add some weight)';
         } else if (bmi >= 18.5 && bmi <= 24.9) {
             resultText = 'Normal Weight (Your weight is in a good place)';
         } else if (bmi >= 25.0 && bmi <= 29.9) {
-            resultText = 'Overweight (Please take of your weight)';
+            resultText = 'Overweight (Please take care of your weight)';
         } else if (bmi >= 30.0 && bmi <= 34.9) {
             resultText = 'Obesity Class I (It would be good if you lose some weight)';
         } else if (bmi >= 35.0 && bmi <= 39.9) {
@@ -65,7 +65,7 @@ document.addEventListener('DOMContentLoaded', function () {
             resultText = 'Obesity Class III (It would be good if you lose some weight)';
         }
     
-        bmiResult.textContent += `= ${resultText}`;
+        bmiResult.innerHTML += `<span style="font-size: 1.6em; color: #333;">= ${resultText}</span>`;
         resultContainer.style.display = 'block';
     }
 
