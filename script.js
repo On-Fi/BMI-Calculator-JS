@@ -29,7 +29,7 @@ document.addEventListener('DOMContentLoaded', function () {
         displayResult(bmi);
     }
 
-    function calculateBMIValue(age, height, weight) {
+    function calculateBMIValue(height, weight) {
         // BMI formula: weight (kg) / (height (m) * height (m)
         const heightInMeters = height / 100;
         return (weight / (heightInMeters * heightInMeters)).toFixed(2);
