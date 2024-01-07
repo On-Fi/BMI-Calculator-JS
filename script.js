@@ -65,7 +65,7 @@ document.addEventListener('DOMContentLoaded', function () {
             resultText = 'Obesity Class III (It would be good if you lose some weight)';
         }
     
-        bmiResult.textContent += ` ${resultText}`;
+        bmiResult.textContent += `= ${resultText}`;
         resultContainer.style.display = 'block';
     }
 
