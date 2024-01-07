@@ -30,9 +30,21 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     function calculateBMIValue(age, height, weight) {
-        // BMI formula: weight (kg) / (height (m) * height (m)
+        // BMI formula: weight (kg) / (height (m) * height (m))
         const heightInMeters = height / 100;
-        return (weight / (heightInMeters * heightInMeters)).toFixed(2);
+        const bmi = weight / (heightInMeters * heightInMeters);
+    
+        // Adjusting BMI based on age 
+        if (age >= 18 && age <= 24) {
+            // No adjustment for age 18-24
+            return bmi.toFixed(2);
+        } else if (age >= 25 && age <= 34) {
+            // Adjust for age 25-34 
+            return (bmi * 1.1).toFixed(2);
+        } else {
+            // Adjust for age 35 and above
+            return (bmi * 1.2).toFixed(2);
+        }
     }
 
     function displayResult(bmi) {
